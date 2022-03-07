@@ -40,6 +40,8 @@ class MCP_CAN
     INT8U   m_nfilhit;                                                  // The number of the filter that matched the message
     INT8U   MCPCS;                                                      // Chip Select pin number
     INT8U   mcpMode;                                                    // Mode to return to after configurations are performed.
+
+    SPIClass *spi = &SPI;
     
 
 /*********************************************************************************************************
@@ -128,6 +130,7 @@ public:
     INT8U abortTX(void);                                                // Abort queued transmission(s)
     INT8U setGPO(INT8U data);                                           // Sets GPO
     INT8U getGPI(void);                                                 // Reads GPI
+    INT8U setSPI(SPIClass *_spi);
 };
 
 #endif
